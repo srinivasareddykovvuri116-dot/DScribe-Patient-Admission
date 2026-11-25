@@ -1,4 +1,4 @@
-# DScribe – Patient Admission Management System
+﻿# DScribe â€“ Patient Admission Management System
 
 A full-stack Patient Admission Management System developed as part of the **DScribe Software Engineer Intern Round 1 assignment**.
 
@@ -46,36 +46,36 @@ The application helps hospital staff manage patient admissions, maintain patient
 - Neon PostgreSQL (production database)
 
 ### Deployment
-- Vercel – Frontend hosting
-- Render – Backend hosting
-- Neon – Cloud database
+- Vercel â€“ Frontend hosting
+- Render â€“ Backend hosting
+- Neon â€“ Cloud database
 
 ## Project Structure
 
 ```text
 DScribe-Patient-Admission/
-├── backend/
-│   └── patient-admission/
-│       ├── src/
-│       ├── .mvn/
-│       ├── Dockerfile
-│       ├── .dockerignore
-│       ├── mvnw
-│       ├── mvnw.cmd
-│       └── pom.xml
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── services/
-│   │   ├── utils/
-│   │   ├── App.jsx
-│   │   ├── App.css
-│   │   └── main.jsx
-│   ├── .env.example
-│   └── package.json
-├── .gitignore
-└── README.md
+â”œâ”€â”€ backend/
+â”‚   â””â”€â”€ patient-admission/
+â”‚       â”œâ”€â”€ src/
+â”‚       â”œâ”€â”€ .mvn/
+â”‚       â”œâ”€â”€ Dockerfile
+â”‚       â”œâ”€â”€ .dockerignore
+â”‚       â”œâ”€â”€ mvnw
+â”‚       â”œâ”€â”€ mvnw.cmd
+â”‚       â””â”€â”€ pom.xml
+â”œâ”€â”€ frontend/
+â”‚   â”œâ”€â”€ public/
+â”‚   â”œâ”€â”€ src/
+â”‚   â”‚   â”œâ”€â”€ components/
+â”‚   â”‚   â”œâ”€â”€ services/
+â”‚   â”‚   â”œâ”€â”€ utils/
+â”‚   â”‚   â”œâ”€â”€ App.jsx
+â”‚   â”‚   â”œâ”€â”€ App.css
+â”‚   â”‚   â””â”€â”€ main.jsx
+â”‚   â”œâ”€â”€ .env.example
+â”‚   â””â”€â”€ package.json
+â”œâ”€â”€ .gitignore
+â””â”€â”€ README.md
 ```
 
 ## Prerequisites
@@ -224,3 +224,16 @@ The frontend communicates with the deployed Spring Boot backend through the conf
 ## Author
 
 Developed as part of the **DScribe Software Engineer Intern Round 1 assignment**.
+## Screenshots
+
+### Dashboard
+![DScribe Dashboard](screenshots/dashboard.png)
+
+### Patient List
+![Patient List](screenshots/patients-list.png)
+
+### Add Patient Form
+![Add Patient Form](screenshots/add-patient-form.png)
+
+
+
