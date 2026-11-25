@@ -28,15 +28,15 @@ The application helps hospital staff manage patient admissions, maintain patient
 
 ### Dashboard
 
-![DScribe Dashboard](../screenshots/dashboard.png)
+![DScribe Dashboard](screenshots/dashboard.png)
 
 ### Patient List
 
-![Patient List](../screenshots/patients-list.png)
+![Patient List](screenshots/patients-list.png)
 
 ### Add Patient Form
 
-![Add Patient Form](../screenshots/add-patient-form.png)
+![Add Patient Form](screenshots/add-patient-form.png)
 
 ## Technology Stack
 
