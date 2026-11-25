@@ -1,6 +1,14 @@
 # DScribe – Patient Admission Management System
 
-A full-stack Patient Admission Management System developed as part of the DScribe Software Engineer Intern Round 1 assignment.
+A full-stack Patient Admission Management System developed as part of the **DScribe Software Engineer Intern Round 1 assignment**.
+
+The application helps hospital staff manage patient admissions, maintain patient records, track discharge status, and monitor admission statistics through a responsive dashboard.
+
+## Live Application
+
+- **Frontend:** https://dscribe-patient-admission-snowy.vercel.app
+- **Backend API:** https://dscribe-patient-admission-v95l.onrender.com
+- **API Options:** https://dscribe-patient-admission-v95l.onrender.com/api/patients/options
 
 ## Features
 
@@ -12,7 +20,7 @@ A full-stack Patient Admission Management System developed as part of the DScrib
 - Mark patients as discharged.
 - Delete patient records with confirmation.
 - Dashboard statistics for total, admitted, and discharged patients.
-- Responsive design for desktop, tablet, and mobile devices.
+- Responsive interface for desktop, tablet, and mobile devices.
 - Frontend and backend data validation.
 - Persistent patient records using PostgreSQL.
 
@@ -35,6 +43,12 @@ A full-stack Patient Admission Management System developed as part of the DScrib
 
 ### Database
 - PostgreSQL
+- Neon PostgreSQL (production database)
+
+### Deployment
+- Vercel – Frontend hosting
+- Render – Backend hosting
+- Neon – Cloud database
 
 ## Project Structure
 
@@ -43,10 +57,21 @@ DScribe-Patient-Admission/
 ├── backend/
 │   └── patient-admission/
 │       ├── src/
+│       ├── .mvn/
+│       ├── Dockerfile
+│       ├── .dockerignore
+│       ├── mvnw
+│       ├── mvnw.cmd
 │       └── pom.xml
 ├── frontend/
 │   ├── public/
 │   ├── src/
+│   │   ├── components/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   └── main.jsx
 │   ├── .env.example
 │   └── package.json
 ├── .gitignore
@@ -55,16 +80,26 @@ DScribe-Patient-Admission/
 
 ## Prerequisites
 
-Install the following before running the application:
+Install the following before running the application locally:
 
 - Java 17 or later
-- Maven
 - Node.js and npm
 - PostgreSQL
+- Git
+
+The project includes Maven Wrapper scripts, so a separate Maven installation is not required.
 
 ## Run Locally
 
-### 1. Database Setup
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/srinivasareddykovvuri116-dot/DScribe-Patient-Admission.git
+
+cd DScribe-Patient-Admission
+```
+
+### 2. Database Setup
 
 Start PostgreSQL and create the database:
 
@@ -72,7 +107,7 @@ Start PostgreSQL and create the database:
 CREATE DATABASE dscribe_patient_db;
 ```
 
-### 2. Backend Setup
+### 3. Backend Setup
 
 Navigate to the backend directory:
 
@@ -80,27 +115,35 @@ Navigate to the backend directory:
 cd backend/patient-admission
 ```
 
-Configure the PostgreSQL password using the `DB_PASSWORD` environment variable.
+Configure the database credentials using environment variables.
 
-For PowerShell:
+**Windows PowerShell:**
 
 ```powershell
+$env:DB_URL = "jdbc:postgresql://localhost:5432/dscribe_patient_db"
+$env:DB_USERNAME = "postgres"
 $env:DB_PASSWORD = "your_postgresql_password"
 ```
 
 Start the Spring Boot application:
 
+**Windows:**
+
+```powershell
+.\mvnw.cmd spring-boot:run
+```
+
+**Linux / macOS:**
+
 ```bash
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
 Backend URL:
 
-```text
 http://localhost:8080
-```
 
-### 3. Frontend Setup
+### 4. Frontend Setup
 
 Open another terminal and navigate to the frontend directory:
 
@@ -114,7 +157,9 @@ Install dependencies:
 npm install
 ```
 
-Create a `.env` file in the frontend directory using `.env.example` as a reference:
+Create a `.env` file in the frontend directory using `.env.example` as a reference.
+
+Configure the API URL:
 
 ```env
 VITE_API_BASE_URL=http://localhost:8080/api
@@ -128,13 +173,17 @@ npm run dev
 
 Frontend URL:
 
-```text
 http://localhost:5173
-```
 
 **Note:** PostgreSQL and the Spring Boot backend must be running before using the frontend.
 
 ## API Endpoints
+
+Base URL:
+
+```text
+/api/patients
+```
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -146,24 +195,32 @@ http://localhost:5173
 | PATCH | `/api/patients/{id}/discharge` | Mark a patient as discharged |
 | DELETE | `/api/patients/{id}` | Delete a patient |
 
-Patient listing supports search and filtering by ward, department, and doctor.
+Patient listing supports search by name and filtering by ward, department, and doctor.
 
 ## Validation
 
-Patient information is validated on both frontend and backend.
+Patient information is validated on both the frontend and backend.
 
 - Patient name is required and must contain only letters and spaces.
 - Age is required and must be between 0 and 120.
 - Gender, ward, department, and doctor are required.
 - Admission date is required and cannot be in the future.
-- Invalid requests are rejected by the backend with validation error messages.
+- Invalid requests are rejected by the backend with appropriate validation error messages.
 
+## Database Persistence
 
-## Live Demo
+Patient records are stored in PostgreSQL using Spring Data JPA and Hibernate.
 
-- **Frontend:** Coming soon
-- **Backend API:** Coming soon
+The production application uses Neon PostgreSQL, allowing patient records to persist independently of frontend or backend restarts.
+
+## Deployment
+
+- **Frontend:** Deployed on Vercel.
+- **Backend:** Deployed on Render using Docker.
+- **Database:** Hosted on Neon PostgreSQL.
+
+The frontend communicates with the deployed Spring Boot backend through the configured API base URL.
 
 ## Author
 
-Developed as part of the DScribe Software Engineer Intern Round 1 assignment.
+Developed as part of the **DScribe Software Engineer Intern Round 1 assignment**.
