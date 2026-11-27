@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 # DScribe – Patient Admission Management System
+=======
+﻿# DScribe – Patient Admission Management System
+>>>>>>> Stashed changes
 
 A full-stack Patient Admission Management System developed as part of the **DScribe Software Engineer Intern Round 1 assignment**.
 
@@ -241,4 +245,8 @@ The frontend communicates with the deployed Spring Boot backend through the conf
 
 ## Author
 
+<<<<<<< Updated upstream
 Developed as part of the **DScribe Software Engineer Intern Round 1 assignment**.
+=======
+Developed as part of the **DScribe Software Engineer Intern Round 1 assignment**.
+>>>>>>> Stashed changes
