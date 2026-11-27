@@ -13,7 +13,8 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 ENV SERVER_PORT=10000
+ENV TZ=Asia/Kolkata
 
 EXPOSE 10000
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Duser.timezone=Asia/Kolkata", "-jar", "app.jar"]
