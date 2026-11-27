@@ -244,9 +244,5 @@ The production application uses Neon PostgreSQL, allowing patient records to per
 The frontend communicates with the deployed Spring Boot backend through the configured API base URL.
 
 ## Author
+Developed as part of the **DScribe Software Engineer Intern Round 1 assignment**.
 
-<<<<<<< Updated upstream
-Developed as part of the **DScribe Software Engineer Intern Round 1 assignment**.
-=======
-Developed as part of the **DScribe Software Engineer Intern Round 1 assignment**.
->>>>>>> Stashed changes
