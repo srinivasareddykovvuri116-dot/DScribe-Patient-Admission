@@ -1,6 +1,6 @@
 
 # DScribe – Patient Admission Management System
-=======
+
 
 
 
